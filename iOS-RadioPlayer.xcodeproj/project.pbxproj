@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9325ACE1D668AB500AFF6FC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9325ACD1D668AB500AFF6FC /* MainViewController.m */; };
+		A9325AD51D668ADB00AFF6FC /* FMPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9325AD01D668ADB00AFF6FC /* FMPlayerViewController.m */; };
+		A9325AD61D668ADB00AFF6FC /* FMStationBackgroundState.m in Sources */ = {isa = PBXBuildFile; fileRef = A9325AD31D668ADB00AFF6FC /* FMStationBackgroundState.m */; };
+		A9325AD71D668ADB00AFF6FC /* FMDisclaimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9325AD41D668ADB00AFF6FC /* FMDisclaimerViewController.m */; };
+		A9325AD91D668B1C00AFF6FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9325AD81D668B1C00AFF6FC /* Main.storyboard */; };
+		A9ABE9231D2DE36700ACEFB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ABE9221D2DE36700ACEFB6 /* main.m */; };
+		A9ABE9261D2DE36700ACEFB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9ABE9251D2DE36700ACEFB6 /* AppDelegate.m */; };
+		A9ABE92E1D2DE36700ACEFB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9ABE92D1D2DE36700ACEFB6 /* Assets.xcassets */; };
+		A9ABE9311D2DE36700ACEFB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9ABE92F1D2DE36700ACEFB6 /* LaunchScreen.storyboard */; };
+		AE9BFEEBF429D0D914C6458F /* libPods-iOS-RadioPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD51F76A763F618C15A3BF8E /* libPods-iOS-RadioPlayer.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		123A54CBF2F665C1C53AE86A /* Pods-iOS-RadioPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-RadioPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-RadioPlayer/Pods-iOS-RadioPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		4A957B2B46787374D866E3EF /* Pods-iOS-RadioPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-RadioPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-RadioPlayer/Pods-iOS-RadioPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		A9325ACC1D668AB500AFF6FC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A9325ACD1D668AB500AFF6FC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		A9325ACF1D668ADB00AFF6FC /* FMPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMPlayerViewController.h; sourceTree = "<group>"; };
+		A9325AD01D668ADB00AFF6FC /* FMPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMPlayerViewController.m; sourceTree = "<group>"; };
+		A9325AD11D668ADB00AFF6FC /* FMDisclaimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDisclaimerViewController.h; sourceTree = "<group>"; };
+		A9325AD21D668ADB00AFF6FC /* FMStationBackgroundState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMStationBackgroundState.h; sourceTree = "<group>"; };
+		A9325AD31D668ADB00AFF6FC /* FMStationBackgroundState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMStationBackgroundState.m; sourceTree = "<group>"; };
+		A9325AD41D668ADB00AFF6FC /* FMDisclaimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDisclaimerViewController.m; sourceTree = "<group>"; };
+		A9325AD81D668B1C00AFF6FC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A9ABE91E1D2DE36700ACEFB6 /* iOS-RadioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-RadioPlayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9ABE9221D2DE36700ACEFB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A9ABE9241D2DE36700ACEFB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A9ABE9251D2DE36700ACEFB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A9ABE92D1D2DE36700ACEFB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9ABE9301D2DE36700ACEFB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A9ABE9321D2DE36700ACEFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD51F76A763F618C15A3BF8E /* libPods-iOS-RadioPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-RadioPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9ABE91B1D2DE36700ACEFB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE9BFEEBF429D0D914C6458F /* libPods-iOS-RadioPlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06F2DA176DCC686595E21931 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A957B2B46787374D866E3EF /* Pods-iOS-RadioPlayer.debug.xcconfig */,
+				123A54CBF2F665C1C53AE86A /* Pods-iOS-RadioPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A9ABE9151D2DE36700ACEFB6 = {
+			isa = PBXGroup;
+			children = (
+				A9ABE9201D2DE36700ACEFB6 /* iOS-RadioPlayer */,
+				A9ABE91F1D2DE36700ACEFB6 /* Products */,
+				06F2DA176DCC686595E21931 /* Pods */,
+				B7E65422ADBABF57CD23E045 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A9ABE91F1D2DE36700ACEFB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9ABE91E1D2DE36700ACEFB6 /* iOS-RadioPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9ABE9201D2DE36700ACEFB6 /* iOS-RadioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A9ABE9241D2DE36700ACEFB6 /* AppDelegate.h */,
+				A9ABE9251D2DE36700ACEFB6 /* AppDelegate.m */,
+				A9325ACC1D668AB500AFF6FC /* MainViewController.h */,
+				A9325ACD1D668AB500AFF6FC /* MainViewController.m */,
+				A9325ACF1D668ADB00AFF6FC /* FMPlayerViewController.h */,
+				A9325AD01D668ADB00AFF6FC /* FMPlayerViewController.m */,
+				A9325AD11D668ADB00AFF6FC /* FMDisclaimerViewController.h */,
+				A9325AD21D668ADB00AFF6FC /* FMStationBackgroundState.h */,
+				A9325AD31D668ADB00AFF6FC /* FMStationBackgroundState.m */,
+				A9325AD41D668ADB00AFF6FC /* FMDisclaimerViewController.m */,
+				A9325AD81D668B1C00AFF6FC /* Main.storyboard */,
+				A9ABE92D1D2DE36700ACEFB6 /* Assets.xcassets */,
+				A9ABE92F1D2DE36700ACEFB6 /* LaunchScreen.storyboard */,
+				A9ABE9321D2DE36700ACEFB6 /* Info.plist */,
+				A9ABE9211D2DE36700ACEFB6 /* Supporting Files */,
+			);
+			path = "iOS-RadioPlayer";
+			sourceTree = "<group>";
+		};
+		A9ABE9211D2DE36700ACEFB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9ABE9221D2DE36700ACEFB6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B7E65422ADBABF57CD23E045 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD51F76A763F618C15A3BF8E /* libPods-iOS-RadioPlayer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9ABE91D1D2DE36700ACEFB6 /* iOS-RadioPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9ABE9351D2DE36700ACEFB6 /* Build configuration list for PBXNativeTarget "iOS-RadioPlayer" */;
+			buildPhases = (
+				160CE8A19F0C5B686BA875CC /* [CP] Check Pods Manifest.lock */,
+				A9ABE91A1D2DE36700ACEFB6 /* Sources */,
+				A9ABE91B1D2DE36700ACEFB6 /* Frameworks */,
+				A9ABE91C1D2DE36700ACEFB6 /* Resources */,
+				3DE3FD06B551FDD5FB0B82E8 /* [CP] Embed Pods Frameworks */,
+				B0CDB13865C5120E275A272C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iOS-RadioPlayer";
+			productName = "iOS-RadioPlayer";
+			productReference = A9ABE91E1D2DE36700ACEFB6 /* iOS-RadioPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9ABE9161D2DE36700ACEFB6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Eric Lambrecht";
+				TargetAttributes = {
+					A9ABE91D1D2DE36700ACEFB6 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A9ABE9191D2DE36700ACEFB6 /* Build configuration list for PBXProject "iOS-RadioPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9ABE9151D2DE36700ACEFB6;
+			productRefGroup = A9ABE91F1D2DE36700ACEFB6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9ABE91D1D2DE36700ACEFB6 /* iOS-RadioPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9ABE91C1D2DE36700ACEFB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9325AD91D668B1C00AFF6FC /* Main.storyboard in Resources */,
+				A9ABE9311D2DE36700ACEFB6 /* LaunchScreen.storyboard in Resources */,
+				A9ABE92E1D2DE36700ACEFB6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		160CE8A19F0C5B686BA875CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3DE3FD06B551FDD5FB0B82E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-RadioPlayer/Pods-iOS-RadioPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0CDB13865C5120E275A272C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-RadioPlayer/Pods-iOS-RadioPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9ABE91A1D2DE36700ACEFB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9325AD61D668ADB00AFF6FC /* FMStationBackgroundState.m in Sources */,
+				A9ABE9261D2DE36700ACEFB6 /* AppDelegate.m in Sources */,
+				A9ABE9231D2DE36700ACEFB6 /* main.m in Sources */,
+				A9325ACE1D668AB500AFF6FC /* MainViewController.m in Sources */,
+				A9325AD51D668ADB00AFF6FC /* FMPlayerViewController.m in Sources */,
+				A9325AD71D668ADB00AFF6FC /* FMDisclaimerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A9ABE92F1D2DE36700ACEFB6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9ABE9301D2DE36700ACEFB6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9ABE9331D2DE36700ACEFB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A9ABE9341D2DE36700ACEFB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9ABE9361D2DE36700ACEFB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A957B2B46787374D866E3EF /* Pods-iOS-RadioPlayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "iOS-RadioPlayer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fm.feed.iOS-RadioPlayer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A9ABE9371D2DE36700ACEFB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 123A54CBF2F665C1C53AE86A /* Pods-iOS-RadioPlayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "iOS-RadioPlayer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fm.feed.iOS-RadioPlayer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9ABE9191D2DE36700ACEFB6 /* Build configuration list for PBXProject "iOS-RadioPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9ABE9331D2DE36700ACEFB6 /* Debug */,
+				A9ABE9341D2DE36700ACEFB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9ABE9351D2DE36700ACEFB6 /* Build configuration list for PBXNativeTarget "iOS-RadioPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9ABE9361D2DE36700ACEFB6 /* Debug */,
+				A9ABE9371D2DE36700ACEFB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9ABE9161D2DE36700ACEFB6 /* Project object */;
+}
