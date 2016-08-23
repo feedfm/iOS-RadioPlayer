@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIView *playerControlsView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *stationSelector;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @property (strong, nonatomic) NSArray *visibleStations;
 @property (nonatomic) NSInteger backgroundIndex;
@@ -144,45 +145,43 @@
                                       }];
         bgURL = bg;
     }
+    
+    if (![visibleStation isEqual:activeStation] ||
+        (state == FMAudioPlayerPlaybackStateReadyToPlay) ||
+        (state == FMAudioPlayerPlaybackStateComplete)) {
 
-    if (![visibleStation isEqual:activeStation]) {
-        NSLog(@"Now displaying inactive station %@", visibleStation.name);
+        NSLog(@"Now displaying inactive or non-playing station %@", visibleStation.name);
 
-        // not displaying active station, so show 'tune in'
+        // set the description text
+        if ((visibleStation.options != nil) &&
+            (visibleStation.options[@"description"] != nil) &&
+            [visibleStation.options[@"description"] isKindOfClass:[NSString class]]) {
+            self.descriptionLabel.text = visibleStation.options[@"description"];
+        } else {
+            self.descriptionLabel.text = @"Tune in!";
+        }
+        
+        // not displaying active station or not playing any music, so show 'tune in'
         self.tuneInView.hidden = FALSE;
         self.tuningView.hidden = TRUE;
         self.playerControlsView.hidden = TRUE;
         
-    } else {
-        // displaying active station
-        
-        if ((state == FMAudioPlayerPlaybackStateReadyToPlay) ||
-            (state == FMAudioPlayerPlaybackStateComplete)) {
-            NSLog(@"Now displaying active, but ready/complete, station %@", visibleStation.name);
-            
-            // not playing anything
-            self.tuneInView.hidden = FALSE;
-            self.tuningView.hidden = TRUE;
-            self.playerControlsView.hidden = TRUE;
-        
-        } else if ((state == FMAudioPlayerPlaybackStateWaitingForItem) ||
+    }  else if ((state == FMAudioPlayerPlaybackStateWaitingForItem) ||
                    (state == FMAudioPlayerPlaybackStateStalled)) {
-            NSLog(@"Now displaying active, but stalled/waiting, station %@", visibleStation.name);
+        NSLog(@"Now displaying active, but stalled/waiting, station %@", visibleStation.name);
             
-            // trying to play
-            self.tuneInView.hidden = TRUE;
-            self.tuningView.hidden = FALSE;
-            self.playerControlsView.hidden = TRUE;
+        // trying to play
+        self.tuneInView.hidden = TRUE;
+        self.tuningView.hidden = FALSE;
+        self.playerControlsView.hidden = TRUE;
             
-        } else {
-            NSLog(@"Now displaying active playing station %@", visibleStation.name);
+    } else {
+        NSLog(@"Now displaying active playing station %@", visibleStation.name);
             
-            // playing!
-            self.tuneInView.hidden = TRUE;
-            self.tuningView.hidden = TRUE;
-            self.playerControlsView.hidden = FALSE;
-            
-        }
+        // playing!
+        self.tuneInView.hidden = TRUE;
+        self.tuningView.hidden = TRUE;
+        self.playerControlsView.hidden = FALSE;
         
     }
     

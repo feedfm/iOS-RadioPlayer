@@ -131,6 +131,12 @@
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h65-mO-bEO" userLabel="tuneInView">
                                             <rect key="frame" x="16" y="23" width="568" height="161"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LS-HO-8os" userLabel="description">
+                                                    <rect key="frame" x="263" y="30" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsdown_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="oF7-3y-cIP" userLabel="disabled dislike">
                                                     <rect key="frame" x="45" y="136" width="24" height="24"/>
                                                 </imageView>
@@ -153,7 +159,10 @@
                                                 <constraint firstItem="IWF-PC-jvT" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="36:100" id="0md-27-Kdr"/>
                                                 <constraint firstItem="BAT-uH-4Nt" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="90:100" id="44J-Ul-h1y"/>
                                                 <constraint firstItem="8jN-JA-zbH" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="64:100" id="59C-93-2iM"/>
+                                                <constraint firstItem="4LS-HO-8os" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="centerX" id="IAx-u0-jNs"/>
+                                                <constraint firstItem="4LS-HO-8os" firstAttribute="centerY" secondItem="h65-mO-bEO" secondAttribute="bottom" multiplier="25:100" id="L9X-Gj-u64"/>
                                                 <constraint firstItem="BAT-uH-4Nt" firstAttribute="centerY" secondItem="h65-mO-bEO" secondAttribute="top" constant="148" id="Tgl-Ar-gzo"/>
+                                                <constraint firstItem="4LS-HO-8os" firstAttribute="width" relation="lessThanOrEqual" secondItem="h65-mO-bEO" secondAttribute="width" multiplier="80:100" id="VGj-qo-lU1"/>
                                                 <constraint firstItem="8jN-JA-zbH" firstAttribute="centerY" secondItem="h65-mO-bEO" secondAttribute="top" constant="148" id="b64-So-lD0"/>
                                                 <constraint firstItem="IWF-PC-jvT" firstAttribute="centerY" secondItem="h65-mO-bEO" secondAttribute="top" constant="148" id="efb-oZ-mad"/>
                                                 <constraint firstItem="oF7-3y-cIP" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="10:100" id="pKI-VF-9Nd"/>
@@ -215,7 +224,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oSh-h4-tYi" customClass="FMProgressView">
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oSh-h4-tYi" customClass="FMProgressView">
                                                     <rect key="frame" x="0.0" y="104" width="568" height="4"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -330,6 +339,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="eMQ-5Q-72O" id="oDB-Ta-JDC"/>
+                        <outlet property="descriptionLabel" destination="4LS-HO-8os" id="XCa-Ey-GAt"/>
                         <outlet property="playerControlsView" destination="jqU-yQ-Sqf" id="1VV-Pw-eEP"/>
                         <outlet property="stationSelector" destination="vQ6-BO-IS7" id="U8c-OM-fa6"/>
                         <outlet property="tuneInView" destination="h65-mO-bEO" id="qoh-3p-suL"/>
