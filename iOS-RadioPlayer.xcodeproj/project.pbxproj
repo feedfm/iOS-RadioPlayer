@@ -83,9 +83,9 @@
 		A9ABE9201D2DE36700ACEFB6 /* iOS-RadioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				A9325ACC1D668AB500AFF6FC /* MainViewController.h */,
 				A9ABE9241D2DE36700ACEFB6 /* AppDelegate.h */,
 				A9ABE9251D2DE36700ACEFB6 /* AppDelegate.m */,
-				A9325ACC1D668AB500AFF6FC /* MainViewController.h */,
 				A9325ACD1D668AB500AFF6FC /* MainViewController.m */,
 				A9325ACF1D668ADB00AFF6FC /* FMPlayerViewController.h */,
 				A9325AD01D668ADB00AFF6FC /* FMPlayerViewController.m */,
