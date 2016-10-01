@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <FeedMediaUI/FeedMediaUI.h>
+#import <FeedMedia/FeedMedia.h>
 
 @interface AppDelegate ()
 

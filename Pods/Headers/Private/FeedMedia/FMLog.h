@@ -1,1 +1,1 @@
-../../../FeedMedia/FeedMedia/FMLog.h
+../../../FeedMedia/Core/FMLog.h

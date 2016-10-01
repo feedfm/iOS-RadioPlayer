@@ -7,7 +7,7 @@
 
 #import "MainViewController.h"
 #import "FMPlayerViewController.h"
-#import <FeedMediaUI/FeedMediaUI.h>
+#import <FeedMedia/FeedMedia.h>
 
 @interface MainViewController ()
 

@@ -1,6 +1,6 @@
 
 target 'iOS-RadioPlayer' do
-  pod 'FeedMediaUI', '~> 0.1.10'
+  pod 'FeedMedia', '~> 3.0.0'
   pod 'SDWebImage', '~> 3.8'
 end
 

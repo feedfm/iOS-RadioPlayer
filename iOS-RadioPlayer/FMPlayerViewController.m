@@ -7,7 +7,8 @@
 
 #import "FMPlayerViewController.h"
 #import "FMStationBackgroundState.h"
-#import <FeedMediaUI/FeedMediaUI.h>
+#import <FeedMedia/FeedMedia.h>
+#import <FeedMedia/FeedMediaUI.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #define kStationRotationIntervalInSeconds 10

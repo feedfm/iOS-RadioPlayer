@@ -1,25 +1,24 @@
 PODS:
-  - FeedMedia (2.4.11)
-  - FeedMediaUI (0.1.10):
-    - FeedMedia (~> 2.4.11)
-    - MarqueeLabel (~> 2.5)
-  - MarqueeLabel (2.7.9):
-    - MarqueeLabel/ObjC (= 2.7.9)
-  - MarqueeLabel/ObjC (2.7.9)
+  - FeedMedia (3.0.0):
+    - FeedMedia/UI (= 3.0.0)
+  - FeedMedia/UI (3.0.0):
+    - MarqueeLabel (~> 2.7.10)
+  - MarqueeLabel (2.7.10):
+    - MarqueeLabel/ObjC (= 2.7.10)
+  - MarqueeLabel/ObjC (2.7.10)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
 
 DEPENDENCIES:
-  - FeedMediaUI (~> 0.1.10)
+  - FeedMedia (~> 3.0.0)
   - SDWebImage (~> 3.8)
 
 SPEC CHECKSUMS:
-  FeedMedia: 87f61e1fca9c2e0d5107eb9ae4639085b6c63726
-  FeedMediaUI: e6cecd392cb5bceb0e316bd4469808365cbd1a4f
-  MarqueeLabel: 645cf4be33f8dca66fd7b15471e331d5a8d378df
+  FeedMedia: 2edb64d96a57283dee3b57d43914159b80d112be
+  MarqueeLabel: 5d722a0bef353178feb301130621b9b8e8b3fcb5
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: 2e2926002721e2b06f47e8707ba337301937fa12
+PODFILE CHECKSUM: feb15de29eb2d3bf758e95588d848c3a788f32ee
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2

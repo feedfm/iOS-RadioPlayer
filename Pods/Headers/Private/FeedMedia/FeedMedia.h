@@ -1,1 +1,1 @@
-../../../FeedMedia/FeedMedia/FeedMedia.h
+../../../FeedMedia/Core/FeedMedia.h

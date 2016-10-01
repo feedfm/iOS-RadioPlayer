@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <FeedMediaUI/FeedMediaUI.h>
+#import <FeedMedia/FeedMediaUI.h>
 
 @interface FMStationBackgroundState : NSObject
 

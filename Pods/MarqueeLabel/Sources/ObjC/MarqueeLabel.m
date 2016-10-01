@@ -525,6 +525,9 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
     
     // Remove sublabel position animations
     [self.subLabel.layer removeAllAnimations];
+    
+    // Remove compeltion blocks
+    self.scrollCompletionBlock = nil;
 }
 
 - (void)scrollAwayWithInterval:(NSTimeInterval)interval {
