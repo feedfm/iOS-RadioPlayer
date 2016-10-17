@@ -45,19 +45,34 @@
 
 -(IBAction) didClickPresentDefault: (id) sender {
     UIStoryboard *sb = [FMResources playerStoryboard];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"feedfmNavViewController"];
+    UINavigationController *vc = [sb instantiateViewControllerWithIdentifier:@"feedfmNavViewController"];
+    FMPlayerViewController *player = (FMPlayerViewController *) vc.topViewController;
     
-    // FMPlayerViewController *playerVC = [[FMPlayerViewController alloc] init];
-
+    player.title = @"My Radio";
+    
     [self presentViewController:vc animated:YES completion:nil];
 }
 
 -(IBAction) didClickPresentDefaultAndHidden: (id) sender {
-
+    UIStoryboard *sb = [FMResources playerStoryboard];
+    UINavigationController *vc = [sb instantiateViewControllerWithIdentifier:@"navigationViewController"];
+    FMPlayerViewController *player = (FMPlayerViewController *) vc.topViewController;
+    
+    player.title = @"My Radio";
+    player.unhiddenStationNames = @[ @"Hidden Station" ];
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 -(IBAction) didClickPresentHidden: (id) sender {
-
+    UIStoryboard *sb = [FMResources playerStoryboard];
+    UINavigationController *vc = [sb instantiateViewControllerWithIdentifier:@"navigationViewController"];
+    FMPlayerViewController *player = (FMPlayerViewController *) vc.topViewController;
+    
+    player.title = @"My Radio";
+    player.visibleStationNames = @[ @"Hidden Station" ];
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 

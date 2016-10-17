@@ -26,6 +26,9 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIH-QJ-HDr">
                                 <frame key="frameInset" minX="29" minY="232" width="542" height="30"/>
                                 <state key="normal" title="open just hidden station"/>
+                                <connections>
+                                    <action selector="didClickPresentHidden:" destination="8AT-oF-ucB" eventType="touchUpInside" id="V7J-hL-Qdt"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67f-G3-Oij">
                                 <frame key="frameInset" minX="29" minY="119" width="542" height="30"/>

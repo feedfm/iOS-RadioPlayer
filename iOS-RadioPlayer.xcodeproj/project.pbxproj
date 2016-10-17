@@ -17,6 +17,7 @@
 		A9ABE9311D2DE36700ACEFB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9ABE92F1D2DE36700ACEFB6 /* LaunchScreen.storyboard */; };
 		A9C3BE0C1DB57438008E88F9 /* FMResources.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C3BE0B1DB57438008E88F9 /* FMResources.m */; };
 		A9C3BE0F1DB5759D008E88F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C3BE0E1DB5759D008E88F9 /* Main.storyboard */; };
+		A9C3BE141DB58161008E88F9 /* FMPlayerAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C3BE131DB58161008E88F9 /* FMPlayerAssets.xcassets */; };
 		AE9BFEEBF429D0D914C6458F /* libPods-iOS-RadioPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD51F76A763F618C15A3BF8E /* libPods-iOS-RadioPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		A9C3BE0A1DB57438008E88F9 /* FMResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResources.h; sourceTree = "<group>"; };
 		A9C3BE0B1DB57438008E88F9 /* FMResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResources.m; sourceTree = "<group>"; };
 		A9C3BE0E1DB5759D008E88F9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A9C3BE131DB58161008E88F9 /* FMPlayerAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FMPlayerAssets.xcassets; sourceTree = "<group>"; };
 		CD51F76A763F618C15A3BF8E /* libPods-iOS-RadioPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-RadioPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -85,21 +87,15 @@
 		A9ABE9201D2DE36700ACEFB6 /* iOS-RadioPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				A9325ACC1D668AB500AFF6FC /* MainViewController.h */,
+				A9C3BE121DB58108008E88F9 /* Player */,
 				A9ABE9241D2DE36700ACEFB6 /* AppDelegate.h */,
 				A9ABE9251D2DE36700ACEFB6 /* AppDelegate.m */,
+				A9325ACC1D668AB500AFF6FC /* MainViewController.h */,
 				A9325ACD1D668AB500AFF6FC /* MainViewController.m */,
-				A9325ACF1D668ADB00AFF6FC /* FMPlayerViewController.h */,
-				A9325AD01D668ADB00AFF6FC /* FMPlayerViewController.m */,
-				A9325AD11D668ADB00AFF6FC /* FMDisclaimerViewController.h */,
-				A9325AD41D668ADB00AFF6FC /* FMDisclaimerViewController.m */,
 				A9C3BE0E1DB5759D008E88F9 /* Main.storyboard */,
-				A9325AD81D668B1C00AFF6FC /* FMPlayerAndDisclaimer.storyboard */,
 				A9ABE92D1D2DE36700ACEFB6 /* Assets.xcassets */,
 				A9ABE92F1D2DE36700ACEFB6 /* LaunchScreen.storyboard */,
 				A9ABE9321D2DE36700ACEFB6 /* Info.plist */,
-				A9C3BE0A1DB57438008E88F9 /* FMResources.h */,
-				A9C3BE0B1DB57438008E88F9 /* FMResources.m */,
 				A9ABE9211D2DE36700ACEFB6 /* Supporting Files */,
 			);
 			path = "iOS-RadioPlayer";
@@ -111,6 +107,21 @@
 				A9ABE9221D2DE36700ACEFB6 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9C3BE121DB58108008E88F9 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A9C3BE0A1DB57438008E88F9 /* FMResources.h */,
+				A9C3BE0B1DB57438008E88F9 /* FMResources.m */,
+				A9325ACF1D668ADB00AFF6FC /* FMPlayerViewController.h */,
+				A9325AD01D668ADB00AFF6FC /* FMPlayerViewController.m */,
+				A9325AD11D668ADB00AFF6FC /* FMDisclaimerViewController.h */,
+				A9325AD41D668ADB00AFF6FC /* FMDisclaimerViewController.m */,
+				A9325AD81D668B1C00AFF6FC /* FMPlayerAndDisclaimer.storyboard */,
+				A9C3BE131DB58161008E88F9 /* FMPlayerAssets.xcassets */,
+			);
+			name = Player;
 			sourceTree = "<group>";
 		};
 		B7E65422ADBABF57CD23E045 /* Frameworks */ = {
@@ -181,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C3BE141DB58161008E88F9 /* FMPlayerAssets.xcassets in Resources */,
 				A9325AD91D668B1C00AFF6FC /* FMPlayerAndDisclaimer.storyboard in Resources */,
 				A9ABE9311D2DE36700ACEFB6 /* LaunchScreen.storyboard in Resources */,
 				A9ABE92E1D2DE36700ACEFB6 /* Assets.xcassets in Resources */,

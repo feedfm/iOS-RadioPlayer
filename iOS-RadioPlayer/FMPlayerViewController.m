@@ -35,22 +35,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     // figure out what stations to display
     [self calculateVisibleStations];
 
     // display available stations
     [self.stationSelector removeAllSegments];
-    [self.visibleStations enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        FMStation *station = obj;
-        
-        [self.stationSelector insertSegmentWithTitle:station.name atIndex:idx animated:false];
-    }];
     
-    // pick out which station we should be displaying off the bat
-    int selectedStationIndex = [self calculateDefaultStation];
-    self.stationSelector.selectedSegmentIndex = selectedStationIndex;
+    if ([self.visibleStations count] > 1) {
+        [self.visibleStations enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            FMStation *station = obj;
+        
+            [self.stationSelector insertSegmentWithTitle:station.name atIndex:idx animated:false];
+        }];
 
+        // pick out which station we should be displaying off the bat
+        int selectedStationIndex = [self calculateDefaultStation];
+        self.stationSelector.selectedSegmentIndex = selectedStationIndex;
+
+    } else {
+        // remove station selector
+        [self.stationSelector removeFromSuperview];
+
+    }
+    
     // update what we're displaying
     [self updateDisplay];
 
@@ -69,6 +77,18 @@
 }
 
 /**
+ * Return the station visible on the display
+ */
+
+- (FMStation *) visibleStation {
+    int index = ([self.visibleStations count] == 1) ? 0 : self.stationSelector.selectedSegmentIndex;
+    
+    FMStation *visibleStation = [self.visibleStations objectAtIndex: index];
+    
+    return visibleStation;
+}
+
+/**
  User wants to start music playback in some station
  */
 
@@ -76,7 +96,7 @@
     // switch to the visible station, then start playback
     FMAudioPlayer *player = [FMAudioPlayer sharedPlayer];
     FMStation *activeStation = [player activeStation];
-    FMStation *visibleStation = [self.visibleStations objectAtIndex: self.stationSelector.selectedSegmentIndex];
+    FMStation *visibleStation = [self visibleStation];
 
     if (![activeStation isEqual:visibleStation]) {
         // change stations, if necessary
@@ -121,7 +141,7 @@
     FMAudioPlayer *player = [FMAudioPlayer sharedPlayer];
     FMAudioPlayerPlaybackState state = [player playbackState];
     FMStation *activeStation = [player activeStation];
-    FMStation *visibleStation = [self.visibleStations objectAtIndex: self.stationSelector.selectedSegmentIndex];
+    FMStation *visibleStation = [self visibleStation];
     
     // make sure background matches visible station
     NSString *bg = [self generateBackgroundImageURLForStation:visibleStation];
