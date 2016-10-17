@@ -6,7 +6,6 @@
 //
 
 #import "FMPlayerViewController.h"
-#import "FMStationBackgroundState.h"
 #import <FeedMedia/FeedMedia.h>
 #import <FeedMedia/FeedMediaUI.h>
 #import <SDWebImage/UIImageView+WebCache.h>

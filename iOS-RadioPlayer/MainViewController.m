@@ -7,6 +7,7 @@
 
 #import "MainViewController.h"
 #import "FMPlayerViewController.h"
+#import "FMResources.h"
 #import <FeedMedia/FeedMedia.h>
 
 @interface MainViewController ()
@@ -41,6 +42,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction) didClickPresentDefault: (id) sender {
+    UIStoryboard *sb = [FMResources playerStoryboard];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"feedfmNavViewController"];
+    
+    // FMPlayerViewController *playerVC = [[FMPlayerViewController alloc] init];
+
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+-(IBAction) didClickPresentDefaultAndHidden: (id) sender {
+
+}
+
+-(IBAction) didClickPresentHidden: (id) sender {
+
+}
+
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
