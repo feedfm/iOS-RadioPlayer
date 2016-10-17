@@ -45,7 +45,7 @@
 
 -(IBAction) didClickPresentDefault: (id) sender {
     UIStoryboard *sb = [FMResources playerStoryboard];
-    UINavigationController *vc = [sb instantiateViewControllerWithIdentifier:@"feedfmNavViewController"];
+    UINavigationController *vc = [sb instantiateViewControllerWithIdentifier:@"navigationViewController"];
     FMPlayerViewController *player = (FMPlayerViewController *) vc.topViewController;
     
     player.title = @"My Radio";
