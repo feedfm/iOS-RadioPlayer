@@ -27,7 +27,7 @@ the steps below (note: we'll assume you're using CocoaPods):
 
 - Add the [FeedMedia](https://cocoapods.org/?q=FeedMedia) and 
 [SDWebImage](https://cocoapods.org/?q=sdwebimage) packages to your Podfile
-and run *pod install* to add them to your project.
+and run `pod install` to add them to your project.
 
 - Create a new `Player` group in your application.
 
@@ -99,5 +99,6 @@ handler to the button:
 }
 ```
 
-- That's it! Run your app and groove out!
+- That's it! Music and stations can be added and removed server side, 
+so there's no more touching required. Run your app and groove out! 
 
