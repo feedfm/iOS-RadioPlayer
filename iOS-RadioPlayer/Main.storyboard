@@ -19,19 +19,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2o-UR-ifz">
-                                <frame key="frameInset" minX="29" minY="174" width="542" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2o-UR-ifz">
                                 <state key="normal" title="open with hidden station"/>
+                                <connections>
+                                    <action selector="didClickPresentDefaultAndHidden:" destination="8AT-oF-ucB" eventType="touchUpInside" id="nl0-7v-2xX"/>
+                                </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIH-QJ-HDr">
-                                <frame key="frameInset" minX="29" minY="232" width="542" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIH-QJ-HDr">
                                 <state key="normal" title="open just hidden station"/>
                                 <connections>
                                     <action selector="didClickPresentHidden:" destination="8AT-oF-ucB" eventType="touchUpInside" id="V7J-hL-Qdt"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67f-G3-Oij">
-                                <frame key="frameInset" minX="29" minY="119" width="542" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67f-G3-Oij">
                                 <state key="normal" title="open default player"/>
                                 <connections>
                                     <action selector="didClickPresentDefault:" destination="8AT-oF-ucB" eventType="touchUpInside" id="doS-MV-aC6"/>
