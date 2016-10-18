@@ -102,3 +102,8 @@ handler to the button:
 - That's it! Music and stations can be added and removed server side, 
 so there's no more touching required. Run your app and groove out! 
 
+## Why isn't this just a CocoaPod?
+
+We've got 99 problems, and transitive dependencies with static libraries aren't
+one of them at the moment.
+
