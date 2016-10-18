@@ -12,15 +12,15 @@ default image provided in the FMPlayerAssets.xcassets file.
 
 Check out our [Android version](https://github.com/feedfm/Android-RadioPlayer) as well!
 
-If you want to add a music player to your app with minimal
-coding, see instructions below.
+*If you want to add a music player to your app with minimal
+coding, see instructions below.*
 
 !["tabbed station page"](images/tune.png)
 !["music playing"](images/playing.png)
 !["media controls"](images/mediabar.png)
 !["lockscreen"](images/lockscreen.png)
 
-# Minimal work to add to your app
+# Add the player to your app
 
 To add this music player to your app with minimal coding, follow
 the steps below (note: we'll assume you're using CocoaPods):
@@ -44,9 +44,10 @@ and run *pod install* to add them to your project.
 #import <FeedMedia/FeedMedia.h>
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
   //...
+  
   [FMAudioPlayer setClientToken:@"demo" secret:@"demo"];
+  
   //...
 }
 ```
@@ -73,6 +74,9 @@ available:
     NSLog(@"music is not available, so button will stay hidden");
         
   }];
+  
+  // ...
+}
 ```
 
 - Finally, attach the following `Touch Up Inside` event
