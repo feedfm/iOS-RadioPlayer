@@ -10,10 +10,10 @@ are provided to the client along with station meta-data.
 If background aren't provided by the server, there is a
 default image provided in the FMPlayerAssets.xcassets file.
 
-Check out our [Android version](https://github.com/feedfm/Android-RadioPlayer) as well!
-
 *If you want to add a music player to your app with minimal
 coding, see instructions below.*
+
+Check out our [Android version](https://github.com/feedfm/Android-RadioPlayer) as well!
 
 !["tabbed station page"](images/tune.png)
 !["music playing"](images/playing.png)
