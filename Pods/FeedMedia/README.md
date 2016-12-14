@@ -33,7 +33,9 @@ desired) all the assets in `Assets/*`.
 
 Creating a custom music station requires you to create an account on
 [Feed.fm](https://feed.fm), but you can try out our sample app here
-with the included demo credentials.
+with the included demo credentials. You can also check out a prettier
+[sample radio player app](https://github.com/feedfm/iOS-RadioPlayer),
+located on GitHub, that uses this library.
 
 ## Author
 

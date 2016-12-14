@@ -9,6 +9,7 @@
 #ifndef FeedMediaUI_h
 #define FeedMediaUI_h
 
+#include "FeedMedia.h"
 #include "FMActivityIndicator.h"
 #include "FMDislikeButton.h"
 #include "FMElapsedTimeLabel.h"

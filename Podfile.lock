@@ -1,23 +1,23 @@
 PODS:
-  - FeedMedia (3.0.0):
-    - FeedMedia/UI (= 3.0.0)
-  - FeedMedia/UI (3.0.0):
+  - FeedMedia (3.0.3):
+    - FeedMedia/UI (= 3.0.3)
+  - FeedMedia/UI (3.0.3):
     - MarqueeLabel (~> 2.7.10)
   - MarqueeLabel (2.7.10):
     - MarqueeLabel/ObjC (= 2.7.10)
   - MarqueeLabel/ObjC (2.7.10)
-  - SDWebImage (3.8.1):
-    - SDWebImage/Core (= 3.8.1)
-  - SDWebImage/Core (3.8.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
   - FeedMedia (~> 3.0.0)
   - SDWebImage (~> 3.8)
 
 SPEC CHECKSUMS:
-  FeedMedia: 2edb64d96a57283dee3b57d43914159b80d112be
+  FeedMedia: 9bc5408ebc998cd6929114c9c38e55b3a98f8fd6
   MarqueeLabel: 5d722a0bef353178feb301130621b9b8e8b3fcb5
-  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
 PODFILE CHECKSUM: feb15de29eb2d3bf758e95588d848c3a788f32ee
 
