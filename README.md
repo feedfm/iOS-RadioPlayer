@@ -1,4 +1,4 @@
-This is an iOS app that makes use of the Feed Media SDK
+This is an official Feed.fm iOS app that makes use of the Feed Media SDK
 to power a Pandora-style Internet-radio app. The app 
 shows how you can use station metadata to hide stations
 and assign images and descriptive text to them.
