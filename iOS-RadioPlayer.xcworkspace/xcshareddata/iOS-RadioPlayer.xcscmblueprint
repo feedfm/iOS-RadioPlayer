@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4C295772AB09D16D5CC5A989A2F7DEB8486C0228",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4C295772AB09D16D5CC5A989A2F7DEB8486C0228" : 9223372036854775807,
+    "60BF0B4AE1C3146C8070197B43EAF20C0175C9FC" : 9223372036854775807,
+    "7741EA64A10CC64D69005ED8687F4B0D4DD1A7A4" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "865F73C7-C33F-4E1F-B1D1-91A0C4616876",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4C295772AB09D16D5CC5A989A2F7DEB8486C0228" : "iOS-RadioPlayer\/",
+    "60BF0B4AE1C3146C8070197B43EAF20C0175C9FC" : "iOS-SDK-Core\/",
+    "7741EA64A10CC64D69005ED8687F4B0D4DD1A7A4" : "iOS-SDK-Core\/FeedMedia\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "iOS-RadioPlayer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "iOS-RadioPlayer.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:feedfm\/iOS-RadioPlayer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4C295772AB09D16D5CC5A989A2F7DEB8486C0228"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/github.com\/feedfm\/iOS-SDK-Core.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "60BF0B4AE1C3146C8070197B43EAF20C0175C9FC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:feedfm\/iOS-SDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7741EA64A10CC64D69005ED8687F4B0D4DD1A7A4"
+    }
+  ]
+}

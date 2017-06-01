@@ -34,10 +34,24 @@
 @property (nonatomic, strong) IBInspectable NSString *stationName;
 
 /**
+ This represents the station that this button represents. Only this
+ or stationName should be used - not both.
+ */
+
+@property (nonatomic, strong) FMStation *station;
+
+/**
  When true, the button will call `[FMAudioPlayer play]` after
  changing the station after a tap.
  */
 
 @property (nonatomic) IBInspectable BOOL playOnClick;
+
+/**
+ When true, this button will hide itself when it matches the active
+ station and the player is not in the idle state.
+ */
+
+@property (nonatomic) IBInspectable BOOL hideWhenActive;
 
 @end

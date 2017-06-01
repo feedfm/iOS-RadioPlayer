@@ -23,5 +23,6 @@
 #include "FMSkipWarningView.h"
 #include "FMStationButton.h"
 #include "FMTotalTimeLabel.h"
+#include "FMEqualizer.h"
 
 #endif /* FeedMediaUI_h */

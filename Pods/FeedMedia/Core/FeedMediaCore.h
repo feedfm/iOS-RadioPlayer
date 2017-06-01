@@ -13,10 +13,11 @@
 
 #import "FMAudioItem.h"
 #import "FMAudioPlayer.h"
+#import "FMLockScreenDelegate.h"
 #import "FMError.h"
 #import "FMLog.h"
 #import "FMStation.h"
 
-#define FEED_MEDIA_CLIENT_VERSION @"3.0.3"
+#define FEED_MEDIA_CLIENT_VERSION @"4.0.0"
 
 #endif /* FeedMediaCore_h */

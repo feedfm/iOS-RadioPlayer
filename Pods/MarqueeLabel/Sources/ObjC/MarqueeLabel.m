@@ -409,7 +409,7 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
             
         case MLLeftRight:
         {
-            self.homeLabelFrame = CGRectIntegral(CGRectMake(self.leadingBuffer, 0.0f, expectedLabelSize.width, expectedLabelSize.height));
+            self.homeLabelFrame = CGRectIntegral(CGRectMake(self.leadingBuffer, 0.0f, expectedLabelSize.width, self.bounds.size.height));
             self.awayOffset = self.bounds.size.width - (expectedLabelSize.width + self.leadingBuffer + self.trailingBuffer);
             
             // Calculate animation duration
@@ -1246,6 +1246,20 @@ CGPoint MLOffsetCGPoint(CGPoint point, CGFloat offset);
 - (void)setBaselineAdjustment:(UIBaselineAdjustment)baselineAdjustment {
     self.subLabel.baselineAdjustment = baselineAdjustment;
     super.baselineAdjustment = baselineAdjustment;
+}
+
+- (UIColor *)tintColor {
+    return self.subLabel.tintColor;
+}
+
+- (void)setTintColor:(UIColor *)tintColor {
+    self.subLabel.tintColor = tintColor;
+    super.tintColor = tintColor;
+}
+
+- (void)tintColorDidChange {
+    [super tintColorDidChange];
+    [self.subLabel tintColorDidChange];
 }
 
 - (CGSize)intrinsicContentSize {

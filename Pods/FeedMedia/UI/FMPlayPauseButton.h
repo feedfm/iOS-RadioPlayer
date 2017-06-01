@@ -42,4 +42,14 @@
 
 @property (nonatomic) IBInspectable BOOL hideWhenStalled;
 
+/**
+ 
+ When set, the button will first make this the `active` station when
+ the user taps the button while the player is in the FMAudioPlayerPlaybackStateReadyToPlay
+ or FMAudioPlayerPlaybackStateComplete state.
+ 
+ */
+
+@property (nonatomic, weak) FMStation *playThisStationWhenIdle;
+
 @end

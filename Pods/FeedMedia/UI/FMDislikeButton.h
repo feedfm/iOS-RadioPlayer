@@ -14,6 +14,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FMAudioItem.h"
 
 /**
  
@@ -37,9 +38,20 @@
  The button will listen for state change events from the `FMAudioPlayer` and update its
  state accordingly.
  
+ If the `audioItem` property is assigned, then the state of the button reflects the
+ 'like' or 'dislike' status of the specified song, rather than the currently playing
+ song.
+
  */
 
 //NOT_IB_DESIGNABLE
 @interface FMDislikeButton : UIButton
+
+/**
+ * If set, then the button reflects the like/dislike state of the specified
+ * song.
+ */
+
+@property (nonatomic, strong) FMAudioItem *audioItem;
 
 @end

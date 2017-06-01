@@ -68,6 +68,14 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [FMAudioPlayer sharedPlayer].disableSongStartNotifications = YES;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [FMAudioPlayer sharedPlayer].disableSongStartNotifications = NO;
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
@@ -81,7 +89,7 @@
  */
 
 - (FMStation *) visibleStation {
-    int index = ([self.visibleStations count] == 1) ? 0 : self.stationSelector.selectedSegmentIndex;
+    int index = ([self.visibleStations count] == 1) ? 0 : (int) self.stationSelector.selectedSegmentIndex;
     
     FMStation *visibleStation = [self.visibleStations objectAtIndex: index];
     

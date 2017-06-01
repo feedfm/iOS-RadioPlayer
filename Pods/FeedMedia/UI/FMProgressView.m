@@ -80,12 +80,18 @@
     FMAudioPlayerPlaybackState newState = _feedPlayer.playbackState;
     
     switch (newState) {
+        case FMAudioPlayerPlaybackStatePaused:
+        case FMAudioPlayerPlaybackStatePlaying:
+        case FMAudioPlayerPlaybackStateStalled:
+            [self updateProgress];
+            break;
+
         case FMAudioPlayerPlaybackStateWaitingForItem:
         case FMAudioPlayerPlaybackStateReadyToPlay:
         case FMAudioPlayerPlaybackStateComplete:
-        case FMAudioPlayerPlaybackStatePaused:
-        case FMAudioPlayerPlaybackStatePlaying:
-            [self updateProgress];
+        case FMAudioPlayerPlaybackStateUninitialized:
+        case FMAudioPlayerPlaybackStateUnavailable:
+            [self resetProgress];
             break;
             
         default:

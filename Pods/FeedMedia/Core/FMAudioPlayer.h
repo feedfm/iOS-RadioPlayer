@@ -12,36 +12,43 @@
 #import "FMAudioItem.h"
 #import "FMError.h"
 #import "FMLog.h"
+#import "FMAudioPlayer.h"
+#import "FMLockScreenDelegate.h"
 
 /**
  *  @const FMAudioPlayerPlaybackStateDidChangeNotification
  *  @discussion Sent when <FMAudioPlayer> state is changed.
  *  <FMAudioPlayer> instance is sent as [NSNotification object]
- *  Observe <playbackState> property for the exact state.
+ *  Observe <playbackState> property for the exact state. This will
+ *  be the first event issued by the library, and the state will
+ *  either be <FMAudioPlayerPlaybackStateUnavailable> or <FMAudioPlayerPlaybackStateReadyToPlay>.
  */
 extern NSString *const FMAudioPlayerPlaybackStateDidChangeNotification;
 
 /**
- *  @const FMAudioPlayerCurrentItemDidChangeNotification
- *  @discussion Sent when currently playing item is changed
+ *  @const FMAudioPlayerCurrentItemDidBeginPlaybackNotification
+ *  @discussion Sent when a new song has begun playback. Code that responds
+ *    to this event can expect [FMAudioPlayer currentItem] to be non-nil.
+ *    This event is only triggered once for any song (and not, for instance,
+ *    after resuming playbck from a pause)
  */
-extern NSString *const FMAudioPlayerCurrentItemDidChangeNotification;
+
+extern NSString *const FMAudioPlayerCurrentItemDidBeginPlaybackNotification;
+
+/*
+ * @const FMAudioPlayerMusicQueuedNotification
+ * @discussion Sent when the player has loaded music from the current
+ * station and is ready for immediate playback
+ */
+ 
+extern NSString *const FMAudioPlayerMusicQueuedNotification;
 
 /**
  *  @const FMAudioPlayerActiveStationDidChangeNotification
- *  Sent when active station is changed
+ *  Sent when active station is changed via one of the [FMAudioPlayer setActiveStation]
+ *  calls.
  */
 extern NSString *const FMAudioPlayerActiveStationDidChangeNotification;
-
-/**
- *  Currently not in use
- */
-extern NSString *const FMAudioPlayerAvailableNotification;
-
-/**
- *  Currently not in use
- */
-extern NSString *const FMAudioPlayerNotAvailableNotification;
 
 /**
  *  @const FMAudioPlayerSkipStatusNotification
@@ -71,9 +78,6 @@ extern NSString *const FMAudioPlayerSkipFailureErrorKey;
  */
 extern NSString *const FMAudioPlayerLikeStatusChangeNotification;
 
-/// Currently not in use
-extern NSString *const FMAudioPlayerStationListAvailableNotification;
-
 /**
  *  @const FMAudioPlayerTimeElapseNotification
  *  Sent every half a second during playback to report changing time.
@@ -86,6 +90,13 @@ extern NSString *const FMAudioPlayerTimeElapseNotification;
  *  userInfo key for NSArray of FMStations from <FMAudioPlayerStationListAvailableNotification>
  */
 extern NSString *const FMAudioPlayerStationListKey;
+
+/**
+ * @const FMAudioItemKey
+ * userInfo key for FMAudioItem object sent with <FMAudioPlayerLikeStatusChangeNotification>
+ */
+
+extern NSString *const FMAudioItemKey;
 
 /**
  *  @const FMAudioFormatMP3
@@ -103,6 +114,20 @@ extern NSString *const FMAudioFormatAAC;
  * be in, as identified by the `[FMAudioPlayer playbackState]`.
  */
 typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
+    
+    /**
+     * The server has not responded yet, so we don't know if music
+     * is available or not yet.
+     */
+     
+    FMAudioPlayerPlaybackStateUninitialized,
+    
+    /**
+     * The server has told us that we cannot stream music.
+     */
+    
+    FMAudioPlayerPlaybackStateUnavailable,
+    
     /**
      *  The player is waiting for the server to give it the next song for playback.
      */
@@ -343,8 +368,7 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
 - (void)skip;
 
 /**
- *  Marks the current song as 'liked' and triggers an `FMAudioPlayerLikeStatusChangeNotification`
- *  notification. Updates the `[FMAudioItem liked]` and `[FMAudioItem disliked]` properties.
+ * Calls `likeAudioItem:` with the currently playing song
  *
  * @see [FMAudioItem liked]
  * @see [FMAudioItem disliked]
@@ -352,8 +376,23 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
 - (void)like;
 
 /**
- *  Marks the current song as 'disliked' and triggers an `FMAudioPlayerLikeStatusChangeNotification`
- *  notification.  Updates the `[FMAudioItem liked]` and `[FMAudioItem disliked]` properties.
+ * Marks the specified song as 'liked'. Updates the `[FMAudioItem liked]`
+ * and `[FMAudioItem disliked]` properties.
+ *
+ * This triggers an `FMAudioPlayerLikeStatusChangeNotification` notification
+ * will be triggered with a userInfo dictionary that contains the audioItem
+ * object indexed by `FMAudioItemKey`.
+ *
+ * @param audioItem the audio item that is to be liked. If null, then the currently
+ *     active audio item will be liked.
+ *
+ * @see [FMAudioItem liked]
+ * @see [FMAudioItem disliked]
+ */
+- (void)likeAudioItem: (FMAudioItem *)audioItem;
+
+/**
+ * Calls `dislikeAudioItem:` with the currently playing song
  *
  * @see [FMAudioItem liked]
  * @see [FMAudioItem disliked]
@@ -361,9 +400,23 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
 - (void)dislike;
 
 /**
- *  Mrks the current song as neither 'liked' nor 'disliked'. Does *not* trigger
- * an `FMAudioPlayerLikeStatusChangeNotification` notification. Updates the
- * `[FMAudioItem liked]` and `[FMAudioItem disliked]` properties.
+ * Marks the specified song as 'disliked'. Updates the `[FMAudioItem liked]`
+ * and `[FMAudioItem disliked]` properties. 
+ *
+ * This triggers an `FMAudioPlayerLikeStatusChangeNotification` notification
+ * will be triggered with a userInfo dictionary that contains the audioItem
+ * object indexed by `FMAudioItemKey`.
+ *
+ * @param audioItem the audio item that is to be disliked. If null, then the currently
+ *     active audio item will be disliked.
+ *
+ * @see [FMAudioItem liked]
+ * @see [FMAudioItem disliked]
+ */
+- (void)dislikeAudioItem: (FMAudioItem *)audioItem;
+
+/**
+ * Calls `unlikeAudioItem:` with the currently playing song
  *
  * @see [FMAudioItem liked]
  * @see [FMAudioItem disliked]
@@ -371,21 +424,94 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
 - (void)unlike;
 
 /**
+ * Marks the specified song as neither 'liked' nor 'disliked'. Updates the `[FMAudioItem liked]`
+ * and `[FMAudioItem disliked]` properties.
+ *
+ * This triggers an `FMAudioPlayerLikeStatusChangeNotification` notification
+ * will be triggered with a userInfo dictionary that contains the audioItem
+ * object indexed by `FMAudioItemKey`.
+ *
+ * @param audioItem the audio item that is to be unliked. If null, then the currently
+ *     active audio item will be unliked.
+ *
+ * @see [FMAudioItem liked]
+ * @see [FMAudioItem disliked]
+ */
+- (void)unlikeAudioItem: (FMAudioItem *)audioItem;
+
+
+/**
  *  Finds a station with the given name and assigns it to the `activeStation`.
  *
  *  @param name Station name. Should not be nil.
  *
- *  @return true if a station with the given name found
+ *  @return true if a station with the given name is found
  *  @see activeStation
  */
 
 - (BOOL) setActiveStationByName: (NSString *)name;
+
+
+/**
+ * Finds a station with the given name and assigns it to the `activeStation`. If
+ * `withCrossfade` is true, any currently playing music will crossfade into the first
+ * song in the new station.
+ *
+ *  @param name Station name. Should not be nil.
+ *  @param withCrossfade if true, if crossfading is enabled, and if music is currenty 
+ *    playing, the currently playing song will fade into the song in the new station
+ *    as soon as it is loaded.
+ *
+ *  @return true if a station with the given name is found
+ *  @see activeStation
+ */
+
+
+- (BOOL) setActiveStationByName: (NSString *)name withCrossfade: (BOOL) withCrossfade;
+
+/**
+ * Make the given station the `activeStation`. If
+ * `withCrossfade` is true, any currently playing music will crossfade into the first
+ * song in the new station.
+ *
+ *  @param station Station to tune to.
+ *  @param withCrossfade if true, if crossfading is enabled, and if music is currenty
+ *    playing, the currently playing song will fade into the song in the new station
+ *    as soon as it is loaded.
+ *
+ *  @see activeStation
+ */
+
+- (void) setActiveStation: (FMStation *)station withCrossfade: (BOOL) withCrossfade;
 
 /**
  *  A value between 0.0 and 1.0 relative to system volume
  */
 
 @property (nonatomic) float mixVolume;
+
+/**
+ * If YES (the default), then the Feed.fm library will
+ * register with the MPRemoteCommandCenter to handle play/pause/skip/like/dislike
+ * commands upon start of playback. Note that, unless a lockScreenDelegate
+ * is assigned, the FMAudioPlayer will still enable/disable the 
+ * play/pause/skip/like/dislike buttons in the MPRemoteCommandCenter (but not
+ * respond to them) when this is NO.
+ */
+
+@property (nonatomic) BOOL doesHandleRemoteCommands;
+
+/**
+ * When not NULL, this causes the FMAudioPlayer to not update
+ * the MPNowPlayingInfoCenter metadata nor enable or disable the like,
+ * dislike, and next track MPFeedbackCommands. See the documentation
+ * of FMLockScreenDelegate for more information. Note that the 
+ * FMAudioPlayer will still register to handle the MPRemoteCommandCenter
+ * commands (play/pause/skip/like/dislike) unless doesHandleRemoteCommands
+ * is also set to NO.
+ */
+
+@property (nonatomic) id<FMLockScreenDelegate> lockScreenDelegate;
 
 
 /**
@@ -427,6 +553,22 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
 @property (nonatomic, readonly) float currentPlaybackRate;
 
 /**
+ * The number of seconds to crossfade between songs. This defaults
+ * to 0.
+ */
+
+@property (nonatomic) float secondsOfCrossfade;
+
+/**
+ * When crossfading between songs, the song we are transitioning to can either
+ * begin playback at full volume or ramp up from silence to full volume during
+ * the transition. When this value is true (the default), the song will
+ * ramp up.
+ */
+
+@property (nonatomic) BOOL crossfadeInEnabled;
+
+/**
  * Indicates if the SDK has retrieved the next song for playback from the
  * server and is ready to start playing it.
  */
@@ -438,6 +580,16 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
  * is not one.
  */
 @property (nonatomic, readonly) FMAudioItem *currentItem;
+
+/**
+ * This array holds all the FMAudioItems that the user has heard
+ * since playback started, including the currently playing
+ * song. As new items start playback, they are appended to this array.
+ *
+ * This history currently does not include songs from past sessions.
+ */
+
+@property (nonatomic, readonly) NSArray *playHistory;
 
 /**
  * This is a list of music stations retrieved from the server.
@@ -455,6 +607,16 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
  */
 
 @property (nonatomic, copy) FMStation *activeStation;
+
+/**
+ * The player displays a notification at the top of the screen during song
+ * transitions by default. If you are currently showing the active song, which
+ * means the notification isn't needed, it can be disabled by setting this 
+ * property to YES. Don't forget to set this to NO when you stop showing the 
+ * active song.
+ */
+
+@property (nonatomic) BOOL disableSongStartNotifications;
 
 /**
  * If false, then the user may not skip the currently playing

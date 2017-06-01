@@ -166,6 +166,7 @@
 				TargetAttributes = {
 					A9ABE91D1D2DE36700ACEFB6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = PAGEPFEF9A;
 					};
 				};
 			};
@@ -371,7 +372,9 @@
 			baseConfigurationReference = 4A957B2B46787374D866E3EF /* Pods-iOS-RadioPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PAGEPFEF9A;
 				INFOPLIST_FILE = "iOS-RadioPlayer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fm.feed.iOS-RadioPlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -383,7 +386,9 @@
 			baseConfigurationReference = 123A54CBF2F665C1C53AE86A /* Pods-iOS-RadioPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PAGEPFEF9A;
 				INFOPLIST_FILE = "iOS-RadioPlayer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fm.feed.iOS-RadioPlayer";
 				PRODUCT_NAME = "$(TARGET_NAME)";

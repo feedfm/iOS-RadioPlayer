@@ -77,6 +77,8 @@
         case FMAudioPlayerPlaybackStateWaitingForItem:
         case FMAudioPlayerPlaybackStateComplete:
         case FMAudioPlayerPlaybackStateReadyToPlay:
+        case FMAudioPlayerPlaybackStateUnavailable:
+        case FMAudioPlayerPlaybackStateUninitialized:
             [self resetProgress];
             break;
             

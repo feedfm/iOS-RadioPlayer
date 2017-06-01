@@ -49,7 +49,7 @@
 - (void) setup {
     _feedPlayer = [FMAudioPlayer sharedPlayer];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(songUpdated:) name:FMAudioPlayerCurrentItemDidChangeNotification object:self.feedPlayer];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(songUpdated:) name:FMAudioPlayerCurrentItemDidBeginPlaybackNotification object:self.feedPlayer];
     
     [self updateText];
 }

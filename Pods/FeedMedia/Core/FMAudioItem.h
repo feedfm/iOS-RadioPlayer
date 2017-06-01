@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreMedia/CoreMedia.h>
+
+
 /**
  * Represents an audio track. Instances of this become available via the `[FMAudioPlayer currentItem]`
  * property.
@@ -30,6 +33,18 @@
  */
 @property (readonly) NSString *album;
 
+/*
+ * A name for this audio file that should be displayed in
+ * place of name/artist/album (used for non-song audio files,
+ * such as ads or introductions)
+ */
+@property (readonly) NSString *displayName;
+
+/**
+ * Arbitrary metadata attached to this song
+ */
+@property (readonly) NSDictionary *metadata;
+
 /**
  *  Track duration in seconds
  */
@@ -46,6 +61,19 @@
  *  Average track bitrate in Kbps
  */
 @property (readonly) double bitrate;
+
+/*
+ * When trimming audio, start playback at this
+ * point.
+ */
+@property (readonly) CMTime trimStart;
+
+/*
+ * When trimming audio, end playback at this
+ * point.
+ */
+@property (readonly) CMTime trimEnd;
+
 /**
  *  If track is liked
  */

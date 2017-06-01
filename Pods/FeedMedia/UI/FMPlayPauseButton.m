@@ -61,11 +61,25 @@
     [self updatePlayerState];
 }
 
+- (void) setHideWhenStalled:(BOOL)hideWhenStalled {
+    _hideWhenStalled = hideWhenStalled;
+    
+    [self updatePlayerState];
+}
+
 
 - (void) onClick {
     if ((_feedPlayer.playbackState == FMAudioPlayerPlaybackStatePaused) ||
         (_feedPlayer.playbackState == FMAudioPlayerPlaybackStateReadyToPlay) ||
         (_feedPlayer.playbackState == FMAudioPlayerPlaybackStateComplete)) {
+
+        if (_playThisStationWhenIdle
+            && ((_feedPlayer.playbackState == FMAudioPlayerPlaybackStateReadyToPlay) ||
+                (_feedPlayer.playbackState == FMAudioPlayerPlaybackStateComplete))
+            ) {
+            [_feedPlayer setActiveStation:_playThisStationWhenIdle];
+        }
+        
         [_feedPlayer play];
     } else {
         [_feedPlayer pause];
@@ -86,42 +100,37 @@
     
     switch (newState) {
         case FMAudioPlayerPlaybackStateWaitingForItem:
+        case FMAudioPlayerPlaybackStateStalled:
+        case FMAudioPlayerPlaybackStateRequestingSkip:
             [self setSelected:YES];
+            [self setEnabled:YES];
             if (_hideWhenStalled) {
                 [self setHidden:YES];
             }
             break;
+        case FMAudioPlayerPlaybackStateComplete:
         case FMAudioPlayerPlaybackStateReadyToPlay:
         case FMAudioPlayerPlaybackStatePaused:
             [self setSelected:NO];
+            [self setEnabled:YES];
             if (_hideWhenStalled) {
                 [self setHidden:NO];
             }
             break;
         case FMAudioPlayerPlaybackStatePlaying:
             [self setSelected:YES];
+            [self setEnabled:YES];
             if (_hideWhenStalled) {
                 [self setHidden:NO];
             }
             break;
-        case FMAudioPlayerPlaybackStateStalled:
-            [self setSelected:YES];
-            if (_hideWhenStalled) {
-                [self setHidden:YES];
-            }
-            break;
-        case FMAudioPlayerPlaybackStateRequestingSkip:
-            [self setSelected:YES];
-            if (_hideWhenStalled) {
-                [self setHidden:YES];
-            }
-            break;
-        case FMAudioPlayerPlaybackStateComplete:
+        case FMAudioPlayerPlaybackStateUninitialized:
+        case FMAudioPlayerPlaybackStateUnavailable:
             [self setSelected:NO];
+            [self setEnabled:NO];
             if (_hideWhenStalled) {
                 [self setHidden:NO];
             }
-            break;
     }
     
     
