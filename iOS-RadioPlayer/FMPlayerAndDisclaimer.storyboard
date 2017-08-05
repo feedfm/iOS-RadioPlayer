@@ -80,12 +80,15 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsdown_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="oF7-3y-cIP" userLabel="disabled dislike">
                                                     <rect key="frame" x="22.5" y="92" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsup_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="IWF-PC-jvT" userLabel="disabled like">
                                                     <rect key="frame" x="111.5" y="92" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jN-JA-zbH" userLabel="start button">
                                                     <rect key="frame" x="205.5" y="88" width="28" height="28"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="play"/>
                                                     <connections>
                                                         <action selector="onUserClickedStart:" destination="1fk-f4-wIS" eventType="touchUpInside" id="bwA-td-qEM"/>
@@ -93,6 +96,7 @@
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skip" translatesAutoresizingMaskIntoConstraints="NO" id="BAT-uH-4Nt" userLabel="disabled skip">
                                                     <rect key="frame" x="294.5" y="88" width="28" height="28"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -167,21 +171,25 @@
                                                 </progressView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrc-72-5I6" userLabel="dislike" customClass="FMDislikeButton">
                                                     <rect key="frame" x="22.5" y="92" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="thumbsdown_unselected"/>
                                                     <state key="selected" image="thumbsdown_selected"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZ2-a1-A4J" userLabel="like" customClass="FMLikeButton">
                                                     <rect key="frame" x="111.5" y="92" width="24" height="24"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="thumbsup_unselected"/>
                                                     <state key="selected" image="thumbsup_selected"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-aE-vby" userLabel="playPause" customClass="FMPlayPauseButton">
                                                     <rect key="frame" x="205.5" y="88" width="28" height="28"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="play"/>
                                                     <state key="selected" image="pause"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggd-dh-JhW" userLabel="skip" customClass="FMSkipButton">
                                                     <rect key="frame" x="294.5" y="88" width="28" height="28"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="skip"/>
                                                 </button>
                                             </subviews>
