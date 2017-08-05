@@ -71,24 +71,52 @@
 }
 
 - (void) onClick {
-    [_feedPlayer setActiveStation:_station];
+    FMStation *currentStation = _feedPlayer.activeStation;
     
-    if (_playOnClick) {
-        [_feedPlayer play];
+    if ([_station isEqual:currentStation]) {
         
-        // the state update notification is kind of slow, so we
-        // update the state of the button here so things are a
-        // little more responsive for the user
-        if (_hideWhenActive) {
-            self.hidden = YES;
+        if (!_playOnClick) {
+            return;
+        }
+        
+        FMAudioPlayerPlaybackState state = _feedPlayer.playbackState;
+
+        if ((state == FMAudioPlayerPlaybackStateComplete) ||
+            (state == FMAudioPlayerPlaybackStateReadyToPlay) ||
+            (state == FMAudioPlayerPlaybackStatePaused)) {
+            [_feedPlayer play];
+            
         } else {
-            self.enabled = YES;
-            self.selected = YES;
+            [_feedPlayer pause];
+            
+        }
+
+    } else {
+        [_feedPlayer setActiveStation:_station withCrossfade:_crossfade];
+        
+        if (_playOnClick) {
+            [_feedPlayer play];
+            
         }
     }
+    
+    [self updatePlayerState];
+
 }
 
 - (void) setStationName:(NSString *)stationName {
+
+    if (_feedPlayer.playbackState == FMAudioPlayerPlaybackStateUninitialized) {
+        // just in case this was set before music was available
+        [_feedPlayer whenAvailable:^{
+            [self setStationName:stationName];
+            
+        } notAvailable:^{
+            // nada
+        }];
+        return;
+    }
+    
     NSArray *stations = [[FMAudioPlayer sharedPlayer] stationList];
     
     for (FMStation *station in stations) {
@@ -111,29 +139,74 @@
     [self updatePlayerState];
 }
 
+- (void) setPlayOnClick:(BOOL)playOnClick {
+    _playOnClick = playOnClick;
+    
+    [self updatePlayerState];
+}
+
+- (void) setHideWhenActive:(BOOL)hideWhenActive {
+    _hideWhenActive = hideWhenActive;
+    
+    [self updatePlayerState];
+}
+
 - (void) updatePlayerState {
 
     // disable player when we can't do playback
     if ((_feedPlayer.playbackState == FMAudioPlayerPlaybackStateUninitialized)
         || (_feedPlayer.playbackState == FMAudioPlayerPlaybackStateUnavailable)) {
         self.enabled = NO;
+        self.selected = NO;
+        return;
+    }
+    
+    self.enabled = YES;
+    
+    // if the station is active right now
+    if ([_feedPlayer.activeStation isEqual:_station]
+        && (_feedPlayer.playbackState != FMAudioPlayerPlaybackStateComplete)
+        && (_feedPlayer.playbackState != FMAudioPlayerPlaybackStateReadyToPlay)) {
 
-    // select or hide when active station matches this button
-    } else if ([_feedPlayer.activeStation isEqual:_station]
-               && (_feedPlayer.playbackState != FMAudioPlayerPlaybackStateComplete)
-               && (_feedPlayer.playbackState != FMAudioPlayerPlaybackStateReadyToPlay)) {
         if (_hideWhenActive) {
             self.hidden = YES;
+
         } else {
-            self.enabled = YES;
-            self.selected = YES;
+            self.hidden = NO;
+            
+            FMAudioPlayerPlaybackState newState = _feedPlayer.playbackState;
+            
+            // highlighted = YES = show the pause button
+            // highlighted = NO = show the play button
+            
+            switch (newState) {
+                case FMAudioPlayerPlaybackStateWaitingForItem:
+                case FMAudioPlayerPlaybackStateStalled:
+                case FMAudioPlayerPlaybackStateRequestingSkip:
+                case FMAudioPlayerPlaybackStatePlaying:
+                    [self setSelected:YES];
+
+                    break;
+                    
+                case FMAudioPlayerPlaybackStateComplete:
+                case FMAudioPlayerPlaybackStateReadyToPlay:
+                case FMAudioPlayerPlaybackStatePaused:
+                    [self setSelected:NO];
+
+                    break;
+                    
+                case FMAudioPlayerPlaybackStateUninitialized:
+                case FMAudioPlayerPlaybackStateUnavailable:
+                    // shouldn't happen
+                    break;
+            }
+            
         }
 
-    // enabled and not selected and not hidden when this station is not active or is idle
     } else {
-        self.enabled = YES;
-        self.hidden = NO;
+        // station isn't active
         self.selected = NO;
+        self.hidden = NO;
         
     }
 }

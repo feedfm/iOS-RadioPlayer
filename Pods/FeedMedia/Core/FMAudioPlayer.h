@@ -14,6 +14,7 @@
 #import "FMLog.h"
 #import "FMAudioPlayer.h"
 #import "FMLockScreenDelegate.h"
+#import "CWStatusBarNotification.h"
 
 /**
  *  @const FMAudioPlayerPlaybackStateDidChangeNotification
@@ -231,7 +232,8 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
    of a voice saying the numbers 0 through 9
 
  To receive notice that music is available or not available, use the
- `whenAvailable:notAvailable:` method call:
+ `whenAvailable:notAvailable:` method call, which is guaranteed to call
+ only one of its arguments as soon as music is deemed available or not:
 
     FMAudioPlayer *player = [FMAudioPlayer sharedPlayer];
  
@@ -259,7 +261,8 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
 
  Once you can play music, use the `play`, `pause`, `skip` methods to
  control playback. The `stationList` property will contain a list of
- stations the user can switch to with the the `setActiveStationByName:` call.
+ stations the user can switch to with the the `setActiveStationByName:` 
+ or `setActiveStation:` calls.
  
  The `FMAudioPlayer` registers with iOS so that
  playback can be paused, skipped, liked, and disliked via the lock screen.
@@ -380,7 +383,7 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
  * and `[FMAudioItem disliked]` properties.
  *
  * This triggers an `FMAudioPlayerLikeStatusChangeNotification` notification
- * will be triggered with a userInfo dictionary that contains the audioItem
+ * with a userInfo dictionary that contains the audioItem
  * object indexed by `FMAudioItemKey`.
  *
  * @param audioItem the audio item that is to be liked. If null, then the currently
@@ -404,7 +407,7 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
  * and `[FMAudioItem disliked]` properties. 
  *
  * This triggers an `FMAudioPlayerLikeStatusChangeNotification` notification
- * will be triggered with a userInfo dictionary that contains the audioItem
+ * with a userInfo dictionary that contains the audioItem
  * object indexed by `FMAudioItemKey`.
  *
  * @param audioItem the audio item that is to be disliked. If null, then the currently
@@ -428,7 +431,7 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
  * and `[FMAudioItem disliked]` properties.
  *
  * This triggers an `FMAudioPlayerLikeStatusChangeNotification` notification
- * will be triggered with a userInfo dictionary that contains the audioItem
+ * with a userInfo dictionary that contains the audioItem
  * object indexed by `FMAudioItemKey`.
  *
  * @param audioItem the audio item that is to be unliked. If null, then the currently
@@ -609,11 +612,25 @@ typedef NS_ENUM(NSInteger, FMAudioPlayerPlaybackState) {
 @property (nonatomic, copy) FMStation *activeStation;
 
 /**
+ * This status bar notification is used to announce song changes to
+ * the user. Access the properties on this object to change
+ * how the notification is styled and to add handlers for when the
+ * notification is tapped.
+ *
+ * Details on this object can be found at https://github.com/cezarywojcik/CWStatusBarNotification
+ */
+
+@property (nonatomic, readonly) CWStatusBarNotification *statusBarNotification;
+
+/**
  * The player displays a notification at the top of the screen during song
  * transitions by default. If you are currently showing the active song, which
- * means the notification isn't needed, it can be disabled by setting this 
+ * means a notification isn't needed, it can be disabled by setting this
  * property to YES. Don't forget to set this to NO when you stop showing the 
  * active song.
+ *
+ * To alter how notifications are displayed, see the `statusBarNotification`
+ * property.
  */
 
 @property (nonatomic) BOOL disableSongStartNotifications;

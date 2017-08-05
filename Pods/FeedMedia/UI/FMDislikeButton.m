@@ -64,6 +64,12 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void) setAudioItem:(FMAudioItem *)audioItem {
+    _audioItem = audioItem;
+    
+    [self updateButtonState];
+}
+
 - (void) onDislikeClick {
     FMAudioItem *ai = (_audioItem == nil) ? _feedPlayer.currentItem : _audioItem;
     

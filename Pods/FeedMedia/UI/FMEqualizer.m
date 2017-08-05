@@ -22,13 +22,6 @@
 
 @implementation FMEqualizer
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 - (id) initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -67,16 +60,21 @@
     // create three bars, each just 1 pixel high.
     _equalizerOne = [[UIView alloc] initWithFrame:[self makeFrameAtIndex:0 withHeight:.05]];
     _equalizerOne.backgroundColor = self.tintColor;
+    _equalizerTwo.userInteractionEnabled = NO;
     [self addSubview:_equalizerOne];
     
     _equalizerTwo = [[UIView alloc] initWithFrame:[self makeFrameAtIndex:1 withHeight:0.05]];
     _equalizerTwo.backgroundColor = self.tintColor;
+    _equalizerTwo.userInteractionEnabled = NO;
     [self addSubview:_equalizerTwo];
     
     _equalizerThree = [[UIView alloc] initWithFrame:[self makeFrameAtIndex:2 withHeight:0.05]];
     _equalizerThree.backgroundColor = self.tintColor;
+    _equalizerThree.userInteractionEnabled = NO;
     [self addSubview:_equalizerThree];
 
+    self.userInteractionEnabled = NO;
+    
     // if music is currently playing, then start up animation
     if ([self isMusicPlaying]) {
         [self startAnimation];

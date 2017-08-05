@@ -10,11 +10,11 @@
 
 /**
  
- This button automatically updates its `enabled` property to reflect wether
+ This button automatically updates its `enabled` property to reflect whether
  the currently playing song (if any) can be skipped, and responds to taps by
  requesting that the current song be skipped. 
  
- If there is a playing or paused song that can be skiped and a skip request
+ If there is a playing or paused song that can be skipped and a skip request
  is not currently in progress, then `enabled` is set to `true`, and `false` otherwise.
 
  */

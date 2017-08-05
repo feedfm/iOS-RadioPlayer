@@ -18,7 +18,7 @@
  The label displays the elapsed time in the format '-0:00'.
  
  When no song is playing, the label will set `text` to the value
- of `textFoNoTime`.
+ of `textForNoTime`.
  
  */
 

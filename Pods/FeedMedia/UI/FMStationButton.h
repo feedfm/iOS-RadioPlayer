@@ -10,16 +10,33 @@
 
 /**
  
- This button sets its `selected` property to true if
- the current active station matches this buttons `stationName`
- property. This button will change the active station
- to the one with the same name as `stationName` when tapped, 
- and optionally start music playback in that station if the
- `playOnClick` property is true.
+ @deprecated The `FMPlayPauseButton` class now incorporates this functionality.
  
- When `selected` is `true`, this button should render as a
- *play* button, and when it is `false`, it should render as
- *now playing* or *active*.
+ This button is used to change the active station to 
+ a specific station, and optionally start/pause music playback
+ from that station.
+ 
+ If you just want a button that starts or stops music, regardless
+ of the active station, take a look at `FMPlayPauseButton`.
+ 
+ Assign an `FMStation` to this button's `station` property
+ or the name of a station to this button's `stationName` property.
+ Now, when the button is tapped, the active station will be
+ changed to this station.
+ 
+ If the active station matches the station associated with this button
+ and is additionally playing music, the button's `selected` state
+ will be `true`.
+ 
+ Depending on the other properties of this button, additional
+ events may happen after a touch:
+ 
+ if `hideWhenActive == true`, the button will be hidden when the
+ active station matches this button's station
+ 
+ if `playOnClick == true`, the button will start playback in the
+ station after changing to it. If the station was already active
+ and playing music, then this will pause playback of the station.
  
  */
 
@@ -28,21 +45,23 @@
 
 /**
  This should be the exact name of a station that this
- button represents.
+ button represents. The button will look through the list
+ of available stations and set the `station` property
+ to the first that matches this station name.
  */
 
 @property (nonatomic, strong) IBInspectable NSString *stationName;
 
 /**
- This represents the station that this button represents. Only this
- or stationName should be used - not both.
- */
+ This represents the station that this button represents.
+*/
 
 @property (nonatomic, strong) FMStation *station;
 
 /**
  When true, the button will call `[FMAudioPlayer play]` after
- changing the station after a tap.
+ changing the station after a tap. If the station was already 
+ active and playing music, this will pause music playback.
  */
 
 @property (nonatomic) IBInspectable BOOL playOnClick;
@@ -53,5 +72,14 @@
  */
 
 @property (nonatomic) IBInspectable BOOL hideWhenActive;
+
+/**
+  When true, and if the player is already playing some other station,
+ the transition to playback of this station will be crossfaded.
+**/
+
+@property (nonatomic) IBInspectable BOOL crossfade;
+ 
+ 
 
 @end

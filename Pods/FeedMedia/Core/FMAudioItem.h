@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreMedia/CoreMedia.h>
 
+#import "FMStation.h"
+
 
 /**
  * Represents an audio track. Instances of this become available via the `[FMAudioPlayer currentItem]`
@@ -32,6 +34,11 @@
  *  Album
  */
 @property (readonly) NSString *album;
+
+/**
+ * Station the play was created from
+ */
+@property (readonly) FMStation *station;
 
 /*
  * A name for this audio file that should be displayed in
@@ -84,13 +91,24 @@
 @property (readonly) BOOL disliked;
 
 /**
- *  Creates FMAudioItem from the JSON provided
+ *  Creates FMAudioItem from the JSON provided. 
  *
  *  @param jsonDictionary JSON dictionary
  *
  *  @return returns new FMAudioItem instance
  */
 - (id)initWithJSON:(id)jsonDictionary;
+
+/**
+ *  Creates FMAudioItem from the JSON and station provided.
+ *
+ *  @param jsonDictionary JSON dictionary
+ *  @param station FMStation that the play was created in
+ *
+ *  @return returns new FMAudioItem instance
+ */
+
+- (id)initWithJSON:(id)jsonDictionary station:(FMStation *)station;
 
 /*
  *  Assigns corresponding values to <liked> and <disliked> properties. Note, this
