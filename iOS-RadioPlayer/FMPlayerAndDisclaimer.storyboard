@@ -78,14 +78,16 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsdown_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="oF7-3y-cIP" userLabel="disabled dislike">
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fF3-Qo-47E" userLabel="dislike">
                                                     <rect key="frame" x="22.5" y="92" width="24" height="24"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbsup_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="IWF-PC-jvT" userLabel="disabled like">
+                                                    <state key="normal" image="thumbsdown_unselected"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OG-xY-sDR" userLabel="like">
                                                     <rect key="frame" x="111.5" y="92" width="24" height="24"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </imageView>
+                                                    <state key="normal" image="thumbsup_unselected"/>
+                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jN-JA-zbH" userLabel="start button">
                                                     <rect key="frame" x="205.5" y="88" width="28" height="28"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,24 +96,25 @@
                                                         <action selector="onUserClickedStart:" destination="1fk-f4-wIS" eventType="touchUpInside" id="bwA-td-qEM"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skip" translatesAutoresizingMaskIntoConstraints="NO" id="BAT-uH-4Nt" userLabel="disabled skip">
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wl-IM-ZF3" userLabel="skip">
                                                     <rect key="frame" x="294.5" y="88" width="28" height="28"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </imageView>
+                                                    <state key="normal" image="skip"/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="IWF-PC-jvT" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="36:100" id="0md-27-Kdr"/>
-                                                <constraint firstItem="BAT-uH-4Nt" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="90:100" id="44J-Ul-h1y"/>
                                                 <constraint firstItem="8jN-JA-zbH" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="64:100" id="59C-93-2iM"/>
+                                                <constraint firstAttribute="bottom" secondItem="5wl-IM-ZF3" secondAttribute="bottom" id="9WU-UL-37T"/>
+                                                <constraint firstItem="8OG-xY-sDR" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="36:100" id="Awc-zh-alP"/>
                                                 <constraint firstItem="4LS-HO-8os" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="centerX" id="IAx-u0-jNs"/>
                                                 <constraint firstItem="4LS-HO-8os" firstAttribute="centerY" secondItem="h65-mO-bEO" secondAttribute="bottom" multiplier="25:100" id="L9X-Gj-u64"/>
-                                                <constraint firstAttribute="bottom" secondItem="IWF-PC-jvT" secondAttribute="bottom" id="LG0-ea-DYA"/>
-                                                <constraint firstAttribute="bottom" secondItem="oF7-3y-cIP" secondAttribute="bottom" id="OVr-rr-3Jm"/>
+                                                <constraint firstItem="fF3-Qo-47E" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="10:100" id="SHx-qK-ceF"/>
                                                 <constraint firstItem="4LS-HO-8os" firstAttribute="width" relation="lessThanOrEqual" secondItem="h65-mO-bEO" secondAttribute="width" multiplier="80:100" id="VGj-qo-lU1"/>
+                                                <constraint firstAttribute="bottom" secondItem="8OG-xY-sDR" secondAttribute="bottom" id="YAh-7d-FV6"/>
                                                 <constraint firstAttribute="bottom" secondItem="8jN-JA-zbH" secondAttribute="bottom" id="ZGx-E1-eV0"/>
-                                                <constraint firstAttribute="bottom" secondItem="BAT-uH-4Nt" secondAttribute="bottom" id="jHd-qz-TCo"/>
-                                                <constraint firstItem="oF7-3y-cIP" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="10:100" id="pKI-VF-9Nd"/>
+                                                <constraint firstAttribute="bottom" secondItem="fF3-Qo-47E" secondAttribute="bottom" id="jLh-tI-z4f"/>
+                                                <constraint firstItem="5wl-IM-ZF3" firstAttribute="centerX" secondItem="h65-mO-bEO" secondAttribute="trailing" multiplier="90:100" id="jq4-Y4-Gl0"/>
                                             </constraints>
                                         </view>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIZ-od-ZDv" userLabel="tuningView">
@@ -351,7 +354,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="big_feedfm_white" width="240" height="34"/>
+        <image name="big_feedfm_white" width="236" height="34"/>
         <image name="close" width="24" height="24"/>
         <image name="disclaimer_background" width="577" height="577"/>
         <image name="pause" width="24" height="24"/>
