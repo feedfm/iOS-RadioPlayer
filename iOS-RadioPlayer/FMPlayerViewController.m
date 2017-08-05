@@ -66,6 +66,9 @@
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     [nc addObserver:self selector:@selector(onPlaybackStateChange:) name:FMAudioPlayerPlaybackStateDidChangeNotification object:[FMAudioPlayer sharedPlayer]];
     
+    // and when the station changes
+    [nc addObserver:self selector:@selector(onActiveStationChange:) name:FMAudioPlayerActiveStationDidChangeNotification object:[FMAudioPlayer sharedPlayer]];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -137,6 +140,14 @@
  */
 
 - (void)onPlaybackStateChange:(NSNotification *)notification {
+    [self updateDisplay];
+}
+
+/**
+ Active station changed
+ */
+
+- (void)onActiveStationChange:(NSNotification *)notificatoon {
     [self updateDisplay];
 }
 
