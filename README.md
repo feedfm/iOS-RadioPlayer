@@ -17,6 +17,8 @@ coding, see instructions below.*
 
 Check out our [Android version](https://github.com/feedfm/Android-RadioPlayer) as well!
 
+For support or bug reports, please send an email to support@feed.fm.
+
 !["tabbed station page"](images/tune.png)
 !["music playing"](images/playing.png)
 !["media controls"](images/mediabar.png)
