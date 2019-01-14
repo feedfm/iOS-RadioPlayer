@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "562706423F6D33F8908CFFA647B59FCF"
+               BlueprintIdentifier = "CD0CA670021B86C5D1003DA7070B7367"
                BuildableName = "libPods-iOS-RadioPlayer.a"
                BlueprintName = "Pods-iOS-RadioPlayer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "562706423F6D33F8908CFFA647B59FCF"
+            BlueprintIdentifier = "CD0CA670021B86C5D1003DA7070B7367"
             BuildableName = "libPods-iOS-RadioPlayer.a"
             BlueprintName = "Pods-iOS-RadioPlayer"
             ReferencedContainer = "container:Pods.xcodeproj">

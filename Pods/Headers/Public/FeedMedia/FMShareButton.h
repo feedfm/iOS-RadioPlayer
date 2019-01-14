@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMShareButton.h
+../../../FeedMedia/Sources/ios/FMShareButton.h

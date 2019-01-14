@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMSkipButton.h
+../../../FeedMedia/Sources/FMSkipButton.h

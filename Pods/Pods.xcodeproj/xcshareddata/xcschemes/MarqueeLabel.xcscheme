@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "49DF8CA5B6A91A80A6FF4B06075BE872"
+               BlueprintIdentifier = "FB7FEA1AE45DCE8A6F384041AD210C12"
                BuildableName = "libMarqueeLabel.a"
                BlueprintName = "MarqueeLabel"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "49DF8CA5B6A91A80A6FF4B06075BE872"
+            BlueprintIdentifier = "FB7FEA1AE45DCE8A6F384041AD210C12"
             BuildableName = "libMarqueeLabel.a"
             BlueprintName = "MarqueeLabel"
             ReferencedContainer = "container:Pods.xcodeproj">

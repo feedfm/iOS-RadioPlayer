@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMSkipWarningView.h
+../../../FeedMedia/Sources/FMSkipWarningView.h

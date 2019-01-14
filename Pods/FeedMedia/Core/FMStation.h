@@ -27,7 +27,7 @@
  *  Station name
  */
 
-@property (readonly) NSString *name;
+@property (readonly, nonnull) NSString *name;
 
 /*
  *  Globally unique ID for this station. This value should not be cached by
@@ -36,15 +36,69 @@
  *  id).
  */
 
-@property (readonly) NSString *identifier;
+@property (readonly, nonnull) NSString *identifier;
 
 /**
  *  Options dictionary. Contact feed.fm to have data specific to your app
  *  appear here!
  */
 
-@property (readonly) NSDictionary *options;
+@property (readonly, nullable) NSDictionary *options;
 
+/**
+ * When true, this station is on-demand, and `-audioFiles` contains
+ * an array of songs available for playback in this station.
+ */
+
+@property (readonly) BOOL isOnDemand;
+
+/**
+ * Used internally to adjust volume of songs from this station.
+ */
+
+@property (readonly) double preGain;
+
+/**
+ * Used internally to detect if this is a simulcast stream or not
+ */
+
+@property (readonly, nonnull) NSString *castURL;
+
+/**
+ * Return true if this station is a simulcast station
+ */
+
+@property (readonly) BOOL isSimulcast;
+
+/**
+ * An array of FMAudioItem songs that are in this station, if it
+ * is on-demand, otherwise this is NULL.
+ */
+
+@property (nullable) NSArray *audioItems;
+
+/**
+ * Representation of the object in dictionary form
+ */
+
+//@property (readonly) NSDictionary* jsonDictionary;
+
+/**
+ * Returs true if this object is a offline/downloadable station.
+ */
+
+@property (readonly) BOOL isTypeOffline;
+
+/**
+ * Returns expiry date for offline stations, null for online stations.
+ */
+
+@property (readonly, nullable) NSDate *expiry;
+
+/*
+ *  JSON representation of this object
+ */
+@property (readonly, nonnull) NSMutableDictionary *dict;
 /*
  *  Used internally to convert the JSON representation of this
  *  station to this object.
@@ -52,6 +106,6 @@
  *  @param jsonDictionary JSON dictionary
  *  @return returns new FMStation instance
  */
-- (id)initWithJSON:(id)jsonDictionary;
+- (nonnull id)initWithJSON:(nonnull id)jsonDictionary isTypeOffline:(BOOL)isOffline;
 
 @end

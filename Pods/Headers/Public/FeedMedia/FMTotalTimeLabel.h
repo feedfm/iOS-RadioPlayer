@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMTotalTimeLabel.h
+../../../FeedMedia/Sources/FMTotalTimeLabel.h

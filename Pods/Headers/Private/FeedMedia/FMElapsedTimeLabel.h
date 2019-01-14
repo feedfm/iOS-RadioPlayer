@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMElapsedTimeLabel.h
+../../../FeedMedia/Sources/FMElapsedTimeLabel.h

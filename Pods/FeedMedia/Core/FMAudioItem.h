@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreMedia/CoreMedia.h>
-
 #import "FMStation.h"
 
 
@@ -16,12 +15,18 @@
  * Represents an audio track. Instances of this become available via the `[FMAudioPlayer currentItem]`
  * property.
  */
-@interface FMAudioItem : NSObject
+@interface FMAudioItem : NSObject <NSCopying>
 
 /*
- *  Track identifier. Two FMAudioItem objects treated as equal if their playId properties are equal.
+ *  Track identifier.
  */
-@property (readonly) NSString *playId;
+@property NSString *playId;
+
+/*
+ * Audio File identifier.
+ */
+@property (readonly) NSString *id;
+
 /**
  *  Track name
  */
@@ -38,7 +43,7 @@
 /**
  * Station the play was created from
  */
-@property (readonly) FMStation *station;
+@property FMStation *station;
 
 /*
  * A name for this audio file that should be displayed in
@@ -59,7 +64,7 @@
 /*
  *  Track file URL
  */
-@property (readonly) NSURL *contentUrl;
+@property NSURL *contentUrl;
 /*
  *  Codec used to encode track. For example: "he-aac"
  */
@@ -89,6 +94,18 @@
  *  If track is disliked
  */
 @property (readonly) BOOL disliked;
+
+/**
+ * Used internally to keep perceived volume levels equal
+ */
+
+@property (readonly) double replayGain;
+
+/**
+ * Used internally to pre-boost the volume of this song
+ */
+
+@property double preGain;
 
 /**
  *  Creates FMAudioItem from the JSON provided. 

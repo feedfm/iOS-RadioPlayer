@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMMetadataLabel.h
+../../../FeedMedia/Sources/FMMetadataLabel.h

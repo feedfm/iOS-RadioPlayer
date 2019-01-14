@@ -17,7 +17,11 @@ typedef NS_ENUM(NSUInteger, MarqueeType) {
     /** Continuously scrolls left (with a pause at the original position if animationDelay is set). See the `trailingBuffer` property to define a spacing between the repeating strings.*/
     MLContinuous = 2,
     /** Continuously scrolls right (with a pause at the original position if animationDelay is set). See the `trailingBuffer` property to define a spacing between the repeating strings.*/
-    MLContinuousReverse = 3
+    MLContinuousReverse = 3,
+    /** Scrolls left first, then does not return to the original position. */
+    MLLeft = 4,
+    /** Scrolls right first, then does not return to the original position. */
+    MLRight = 5
 };
 
 
@@ -253,7 +257,7 @@ IB_DESIGNABLE
  @deprecated Use `trailingBuffer` instead. Values set to this property are simply forwarded to `trailingBuffer`.
  */
  
-@property (nonatomic, assign) CGFloat continuousMarqueeExtraBuffer DEPRECATED_ATTRIBUTE;
+@property (nonatomic, assign) CGFloat continuousMarqueeExtraBuffer __deprecated_msg("Use trailingBuffer instead.");
 
 
 /** The length of transparency fade at the left and right edges of the `MarqueeLabel` instance's frame.
@@ -292,7 +296,6 @@ IB_DESIGNABLE
 
 /** Immediately resets the label to the home position, cancelling any in-flight scroll animation, and restarts the scroll animation if the appropriate conditions are met.
  
- @see resetLabel
  @see triggerScrollStart
  */
 
@@ -313,16 +316,11 @@ IB_DESIGNABLE
 - (void)shutdownLabel;
 
 
-/** Resets the label text, recalculating the scroll animation.
- 
- The text is immediately returned to the home position, and the scroll animation positions are cleared. Scrolling will not resume automatically after
- a call to this method. To re-initiate scrolling, use either a call to `restartLabel` or make a change to a UILabel property such as text, bounds/frame,
- font, font size, etc.
- 
- @see restartLabel
+/**
+ @deprecated Use `resetLabel:` instead.
  */
 
-- (void)resetLabel;
+- (void)resetLabel __deprecated_msg("Use resetLabel instead");
 
 
 /** Pauses the text scrolling animation, at any point during an in-progress animation.
@@ -470,7 +468,7 @@ IB_DESIGNABLE
  @deprecated Use `controllerViewDidAppear:` instead.
  */
 
-+ (void)controllerViewAppearing:(UIViewController *)controller DEPRECATED_ATTRIBUTE;
++ (void)controllerViewAppearing:(UIViewController *)controller __deprecated_msg("Use controllerViewDidAppear: instead.");
 
 
 /** Labelizes all `MarqueeLabel` instances that have the specified view controller in their next responder chain.

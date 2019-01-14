@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMPlayPauseButton.h
+../../../FeedMedia/Sources/FMPlayPauseButton.h

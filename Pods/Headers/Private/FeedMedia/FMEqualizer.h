@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMEqualizer.h
+../../../FeedMedia/Sources/FMEqualizer.h

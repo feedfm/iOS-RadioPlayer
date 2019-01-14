@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMActivityIndicator.h
+../../../FeedMedia/Sources/FMActivityIndicator.h

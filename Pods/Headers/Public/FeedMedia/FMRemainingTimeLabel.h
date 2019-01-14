@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMRemainingTimeLabel.h
+../../../FeedMedia/Sources/FMRemainingTimeLabel.h

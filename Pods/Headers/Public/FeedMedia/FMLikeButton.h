@@ -1,1 +1,1 @@
-../../../FeedMedia/UI/FMLikeButton.h
+../../../FeedMedia/Sources/FMLikeButton.h
