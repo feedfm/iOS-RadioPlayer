@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FeedMedia",
+        "repositoryURL": "https://github.com/feedfm/iOS-SDK",
+        "state": {
+          "branch": null,
+          "revision": "9154d3f88b30179f03885c6a83663022b48b12cf",
+          "version": "5.0.0"
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage",
+        "state": {
+          "branch": null,
+          "revision": "9ffc546b8f68c3251ca09cfa95bbd20084b6321e",
+          "version": "5.11.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
