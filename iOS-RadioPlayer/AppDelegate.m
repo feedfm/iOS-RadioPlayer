@@ -20,6 +20,12 @@
 
     // if you are debugging things:
     //   FMLogSetLevel(FMLogLevelDebug);
+    
+    FMAudioPlayer *player = [FMAudioPlayer sharedPlayer];
+    // By default, the player sets the `AVAudioSessionCategoryOptions` to `AVAudioSessionCategoryOptionMixWithOthers`, which
+    // prevents us from becoming the 'Now Playing' app in the lock screen. The following removes that option, so this
+    // app will show up and be controllable on the lock screen.
+    [player setAVAudioSessionCategory:AVAudioSessionCategoryPlayback mode:AVAudioSessionModeDefault options:  0 ];
 
     [FMAudioPlayer setClientToken:@"sdkdemo" secret:@"sdkdemo"];
     

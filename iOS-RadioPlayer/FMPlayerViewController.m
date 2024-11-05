@@ -70,14 +70,6 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [FMAudioPlayer sharedPlayer].disableSongStartNotifications = YES;
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [FMAudioPlayer sharedPlayer].disableSongStartNotifications = NO;
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
